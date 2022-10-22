@@ -8,35 +8,44 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body onload="load()">
-    <section class="row-reverse">
+    <!-- Buttons to test colors
+    <button onclick="changeBackground('#9CAF88')">#9CAF88</button>
+    <button onclick="changeBackground('#8ABD91')">#8ABD91</button>
+    <button onclick="changeBackground('#9AC791')">#9AC791</button>
+    <button onclick="changeBackground('#C0C791')">#C0C791</button>
+    <button onclick="changeBackground('#A9BD93')">#A9BD93</button>
+    -->
+    <section id="body" class="row-reverse">
         <nav>
             <ul>
                 <li>
-                    <a class="navbar-a" href="index.html">
+                    <a id="index.html" class="navbar-a" href="index.html">
                         <span class="navbar-emoji">&#127968;</span>
                         <span class="navbar-text">Home</span>
                     </a>
                 </li>
                 <li>
-                    <a class="navbar-a" href="CV.html">
+                    <a id="CV.html" class="navbar-a" href="CV.html">
                         <span class="navbar-emoji">&#128195;</span>
                         <span class="navbar-text">CV</span>
                     </a>
                 </li>
                 <li>
-                    <a class="navbar-a" href="Portfolio.html">
+                    <a id="Portfolio.html" class="navbar-a" href="Portfolio.html">
                         <span class="navbar-emoji">&#128194;</span>
                         <span class="navbar-text">Portfolio</span>
                     </a>
                 </li>
             </ul>
         </nav>
-        <section id="content">
+        <div id="content">
             <h1>Séverin Robert</h1>
-            <h2>Portfolio</h2>
-            <table id="portfolio-table">
-            </table>
-        </section>
+            <section>
+                <h2>Portfolio</h2>
+                <table id="portfolio-table">
+                </table>
+            </section>
+        </div>
     </section>
     <footer>
         <section>

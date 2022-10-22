@@ -52,6 +52,10 @@ ul {
     list-style: none;
 }
 
+#body {
+    margin: 2rem;
+}
+
 #content {
     width: 50%;
 }
@@ -69,4 +73,26 @@ header {
 footer {
     position: absolute;
     bottom: 0;
+}
+
+ul {
+    border-left: var(--secondaryColor) solid;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 0.5rem;   
+}
+
+tr {
+    border-bottom: var(--secondaryColor) 1px solid;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: var(--secondaryColor);
 }

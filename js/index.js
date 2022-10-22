@@ -2,22 +2,38 @@
 
 const emojis = {
     'index.html': {
-        'active' : '&#127969;', //🏡
-        'passive' : '&#127968;', //🏠
+        'active' : '🏡', //🏡
+        'passive' : '🏠', //🏠
     },
     'CV.html': {
-        'active' : '&#128221;', //📝
-        'passive' : '&#128195;', //📃
+        'active' : '📝', //📝
+        'passive' : '📃', //📃
     },
     'Portfolio.html': {
-        'active' : '&#128194;', //📂
-        'passive' : '&#128193;', //📁
+        'active' : '📂', //📂
+        'passive' : '📁', //📁
     },
+}
+
+function changeBackground(color) {
+    document.querySelector("body").style.backgroundColor = color;
 }
 
 function load() {
     const href = window.location.href.split('/');
     const currentPage = href[href.length - 1];
+    for(let key of Object.keys(emojis)) {
+        document.getElementById(key).addEventListener("mouseenter", (e) => {
+            console.log(e.target.firstElementChild);
+            e.target.firstElementChild.innerText = emojis[key]['active'];
+        });
+        document.getElementById(key).addEventListener("mouseleave", (e) => {
+            console.log(e);
+            if(key != currentPage) {
+                e.target.firstElementChild.innerText = emojis[key]['passive'];
+            }
+        });
+    }
     if(currentPage == 'Portfolio.html') {
         let table = `
         <tr>
