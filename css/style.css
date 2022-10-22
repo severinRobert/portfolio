@@ -1,0 +1,72 @@
+:root {
+    --textPrimaryColor: white;
+    --textSecondaryColor: white;
+    --primaryColor: #8ABD91;
+    --secondaryColor: #009f83;
+}
+
+span.navbar-text::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+span.navbar-text:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+span.navbar-text::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    transition: transform .3s ease;
+}
+span.navbar-text {
+    position: relative;
+}
+
+a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--textPrimaryColor);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background-color: var(--primaryColor);
+    color: var(--textPrimaryColor);
+}
+
+nav {
+    width: 30%;
+}
+
+ul {
+    list-style: none;
+}
+
+#content {
+    width: 50%;
+}
+
+.row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+}
+
+header {
+    margin: 2rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
