@@ -23,14 +23,16 @@ function load() {
     const href = window.location.href.split('/');
     const currentPage = href[href.length - 1];
     for(let key of Object.keys(emojis)) {
-        document.getElementById(key).addEventListener("mouseenter", (e) => {
+        const element = document.getElementById(key);
+        element.addEventListener("mouseenter", (e) => {
             e.target.firstElementChild.innerText = emojis[key]['active'];
         });
-        document.getElementById(key).addEventListener("mouseleave", (e) => {
+        element.addEventListener("mouseleave", (e) => {
             if(key != currentPage) {
                 e.target.firstElementChild.innerText = emojis[key]['passive'];
             }
         });
+        element.firstElementChild.innerText = emojis[key][key==currentPage ? 'active' : 'passive']
     }
     if(currentPage == 'Portfolio.html') {
         let table = `
