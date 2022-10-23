@@ -29,7 +29,7 @@ function buildPortfolio(sort="endDate") {
         let activity = activities[activityId];
         let hours = activity.workedHours;
         portfolioTable += `
-            <tr>
+            <tr class="portfolio-row">
                 <td>${Number(activityId)+1}</td>
                 <td>${activity.title}</td>
                 <td>${activity.theme}</td>
@@ -57,7 +57,7 @@ function buildPortfolio(sort="endDate") {
         let validatedHours = hours > 9 ? 10 : hours;
         total += validatedHours;
         summaryTable += `
-            <tr>
+            <tr class="summary-row">
                 <td>${theme}</td>
                 <td>${hours}</td>
                 <td>${validatedHours}</td>
