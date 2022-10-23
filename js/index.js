@@ -24,11 +24,9 @@ function load() {
     const currentPage = href[href.length - 1];
     for(let key of Object.keys(emojis)) {
         document.getElementById(key).addEventListener("mouseenter", (e) => {
-            console.log(e.target.firstElementChild);
             e.target.firstElementChild.innerText = emojis[key]['active'];
         });
         document.getElementById(key).addEventListener("mouseleave", (e) => {
-            console.log(e);
             if(key != currentPage) {
                 e.target.firstElementChild.innerText = emojis[key]['passive'];
             }
@@ -36,13 +34,15 @@ function load() {
     }
     if(currentPage == 'Portfolio.html') {
         let table = `
-        <tr>
-            <th>#</th>
-            <th>Titre</th>
-            <th>Thème</th>
-            <th>Debut</th>
-            <th>Fin</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Titre</th>
+                <th>Thème</th>
+                <th>Debut</th>
+                <th>Fin</th>
+            </tr>
+        </thead>
         `;
 
         for(let activityId in activities) {
