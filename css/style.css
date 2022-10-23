@@ -27,6 +27,7 @@ header {
     justify-content: space-between;
     margin: 1rem;
 }
+
 h1 {
     font-size: 1.8rem;
 }
@@ -42,9 +43,12 @@ h1 {
 table {
     border-collapse: collapse;
 }
-td, th {
+
+td,
+th {
     padding: 0.3rem;
 }
+
 tr {
     border-bottom: var(--secondaryColor) 1px solid;
     cursor: pointer;
@@ -57,11 +61,12 @@ tr {
         justify-content: center;
         border-bottom: var(--secondaryColor) solid;
     }
-    li {  
+
+    li {
         margin: 1rem 0;
         padding: 0 1rem;
         border-left: var(--secondaryColor) solid 1px;
-        border-right: var(--secondaryColor)  solid 1px;
+        border-right: var(--secondaryColor) solid 1px;
     }
 
     /* Force table to not be like tables anymore */
@@ -73,6 +78,7 @@ tr {
     tr {
         display: block;
     }
+
     /* Zebra striping */
     tr:nth-of-type(odd) {
         background: var(--secondaryColor);
@@ -84,7 +90,9 @@ tr {
         top: -9999px;
         left: -9999px;
     }
-    td, th {
+
+    td,
+    th {
         border: 1px solid #ccc;
         text-align: left;
     }
@@ -118,107 +126,119 @@ tr {
     td:nth-of-type(1):before {
         content: "#";
     }
+
     td:nth-of-type(2):before {
         content: "Title";
     }
+
     td:nth-of-type(3):before {
         content: "Theme";
     }
+
     td:nth-of-type(4):before {
         content: "Worked Hours";
     }
+
     td:nth-of-type(5):before {
         content: "Validated Hours";
     }
+
     td:nth-of-type(6):before {
         content: "Start";
     }
+
     td:nth-of-type(7):before {
         content: "End";
     }
 }
 
 @media (min-width: 760px) {
-    span.navbar-text::before {  
+    span.navbar-text::before {
         transform: scaleX(0);
         transform-origin: bottom right;
     }
-    
+
     span.navbar-text:hover::before {
         transform: scaleX(1);
         transform-origin: bottom left;
     }
-    
+
     span.navbar-text::before {
         content: " ";
         display: block;
         position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         inset: 0 0 0 0;
         background: rgba(0, 0, 0, 0.3);
         z-index: -1;
         transition: transform .3s ease;
     }
+
     span.navbar-text {
         position: relative;
     }
-    
+
     a {
         font-size: 2rem;
     }
-    
+
     body {
         width: 100vw;
         height: 100vh;
         margin: 0;
     }
-    
+
     nav {
         width: 30%;
     }
-    
-    
+
+
     #body {
         margin: 2rem;
     }
-    
+
     #page {
-        width: 50%;
+        width: 55%;
     }
-    
+
     .row-reverse {
         display: flex;
         flex-direction: row-reverse;
         justify-content: end;
     }
-    
+
     header {
         margin: 2rem;
     }
-    
+
     footer {
         position: absolute;
         bottom: 0;
     }
-    
+
     ul {
         padding: 0 2rem;
         border-left: var(--secondaryColor) solid;
     }
-    
+
     table {
         border-collapse: collapse;
     }
-    
-    td, th {
-        padding: 0.5rem;   
+
+    td,
+    th {
+        padding: 0.5rem;
     }
-    
+
     tr {
         border-bottom: var(--secondaryColor) 1px solid;
         border-radius: 1rem;
         cursor: pointer;
     }
+
     tr:hover {
         background-color: var(--secondaryColor);
     }
