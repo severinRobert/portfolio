@@ -35,31 +35,7 @@ function load() {
         element.firstElementChild.innerText = emojis[key][key==currentPage ? 'active' : 'passive']
     }
     if(currentPage == 'Portfolio.html') {
-        let table = `
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Titre</th>
-                <th>Thème</th>
-                <th>Debut</th>
-                <th>Fin</th>
-            </tr>
-        </thead>
-        `;
-
-        for(let activityId in activities) {
-            let activity = activities[activityId];
-            table += `
-            <tr>
-                <td>${Number(activityId)+1}</td>
-                <td>${activity.title}</td>
-                <td>${activity.theme}</td>
-                <td>${activity["startDate"].toLocaleDateString("fr")}</td>
-                <td>${activity["endDate"].toLocaleDateString("fr")}</td>
-            </tr>
-            `;
-        }
-        document.getElementById("portfolio-table").innerHTML = table;
+        buildPortfolio();
     }
     
 }

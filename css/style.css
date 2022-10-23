@@ -125,9 +125,15 @@ tr {
         content: "Theme";
     }
     td:nth-of-type(4):before {
-        content: "Start";
+        content: "Worked Hours";
     }
     td:nth-of-type(5):before {
+        content: "Validated Hours";
+    }
+    td:nth-of-type(6):before {
+        content: "Start";
+    }
+    td:nth-of-type(7):before {
         content: "End";
     }
 }
