@@ -43,6 +43,7 @@ function buildPortfolio(sort="endDate") {
     }
 
     let summaryTable = `
+        <caption>Portfolio Activities</caption>
         <thead>
             <tr>
                 <th>Theme</th>

@@ -13,7 +13,7 @@ const activities = [
         "workedHours": 11,
         "startDate": new Date("2020-11-16"),
         "endDate": new Date("2020-11-17"),
-        "theme": "Conférences",
+        "theme": "Conferences",
     },
     {
         "title": "BattleDev 2020",
@@ -41,7 +41,7 @@ const activities = [
         "workedHours": 1,
         "startDate": new Date("2021-02-09"),
         "endDate": new Date("2021-02-09"),
-        "theme": "Conférences",
+        "theme": "Conferences",
     },
     {
         "title": "Présentation Efficy",
@@ -55,7 +55,7 @@ const activities = [
         "workedHours": 1,
         "startDate": new Date("2021-02-23"),
         "endDate": new Date("2021-02-23"),
-        "theme": "Conférences",
+        "theme": "Conferences",
     },
     {
         "title": "Devday 2021",
@@ -69,7 +69,7 @@ const activities = [
         "workedHours": 6,
         "startDate": new Date("2021-11-23"),
         "endDate": new Date("2021-11-23"),
-        "theme": "Conférences",
+        "theme": "Conferences",
     },
     {
         "title": "CTEphec",
@@ -125,7 +125,7 @@ const activities = [
         "workedHours": Infinity,
         "startDate": new Date("2021-09-01"),
         "endDate": new Date("2022-09-01"),
-        "theme": "Scoutisme",
+        "theme": "Scout",
     },
     {
         "title": "Action",
@@ -139,7 +139,7 @@ const activities = [
         "workedHours": 14,
         "startDate": new Date("2020-09-25"),
         "endDate": new Date("2020-10-03"),
-        "theme": "Jobs Étudiants",
+        "theme": "Student Job",
     },
     {
         "title": "Dogchef",
@@ -150,10 +150,10 @@ const activities = [
                 "alt": "alt",
             }
         ],
-        "workedHours": 17,
+        "workedHours": 34,
         "startDate": new Date("2022-06-25"),
         "endDate": new Date(),
-        "theme": "Jobs Étudiants",
+        "theme": "Student Job",
     },
     {
         "title": "Lescigognes",
@@ -167,7 +167,7 @@ const activities = [
         "workedHours": 141,
         "startDate": new Date("2020-02-11"),
         "endDate": new Date(),
-        "theme": "Jobs Étudiants",
+        "theme": "Student Job",
     },
     {
         "title": "SIEP",
@@ -181,6 +181,62 @@ const activities = [
         "workedHours": 4,
         "startDate": new Date("2022-02-18"),
         "endDate": new Date("2022-02-18"),
-        "theme": "Représentation EPHEC",
+        "theme": "EPHEC representative",
+    },
+    {
+        "title": "Malgache Game",
+        "description": "https://severinrobert.github.io/jeuMalgache/jeuBoule.html",
+        "images": [
+            {
+                "src": "src",
+                "alt": "alt",
+            }
+        ],
+        "workedHours": 8,
+        "startDate": new Date("2020-08-25"),
+        "endDate": new Date("2020-08-25"),
+        "theme": "Personnal Project",
+    },
+    {
+        "title": "Arduino Clock",
+        "description": "https://github.com/severinRobert/clock_arduino",
+        "images": [
+            {
+                "src": "src",
+                "alt": "alt",
+            }
+        ],
+        "workedHours": 5,
+        "startDate": new Date("2021-01-17"),
+        "endDate": new Date("2021-01-18"),
+        "theme": "Personnal Project",
+    },
+    {
+        "title": "Home Server",
+        "description": "https://github.com/severinRobert/home-server",
+        "images": [
+            {
+                "src": "src",
+                "alt": "alt",
+            }
+        ],
+        "workedHours": 50,
+        "startDate": new Date("2022-04-12"),
+        "endDate": new Date("2022-09-02"),
+        "theme": "Personnal Project",
+    },
+    {
+        "title": "Building PC",
+        "description": "",
+        "images": [
+            {
+                "src": "src",
+                "alt": "alt",
+            }
+        ],
+        "workedHours": 5,
+        "startDate": new Date("2022-04-11"),
+        "endDate": new Date("2022-04-11"),
+        "theme": "Personnal Project",
     },
 ];
