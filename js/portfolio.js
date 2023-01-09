@@ -11,10 +11,10 @@ function createPopup(activity, activityId) {
     <button id="popup-close">X</button>
     <div id="popup-body"> 
         <h1>${activity.title}</h1>
-        <p>Theme: ${activity.theme}</p>
-        <p>Worked Hours: ${hours}</p>
-        <p>Validated Hours: ${hours > 9 ? 10 : hours}</p>
-        <p>From ${activity.startDate.toLocaleDateString("fr")} to ${activity.endDate.toLocaleDateString("fr")}</p>
+        <p>Thème: ${activity.theme}</br>
+        Heures effectuées: ${hours}</br>
+        Heures validées: ${hours > 9 ? 10 : hours}</br>
+        Du ${activity.startDate.toLocaleDateString("fr")} au ${activity.endDate.toLocaleDateString("fr")}</p>
         <p>${activity.description}</p>
         <div id="popup-images">
             <div class="carousel">
@@ -22,7 +22,9 @@ function createPopup(activity, activityId) {
             </div>    
         </div>
         <div id="popup-links">
-            ${activity.links.map(link => `<a href="${link}" target="_blank">${link}</a>`).join('')}
+            ${activity.links.length > 0 ? "<p>Liens:</p><ul>" : ""}
+                ${activity.links.map(link => `<li><a href="${link}" target="_blank">${link}</a></li>`).join('')}
+                ${activity.links.length > 0 ? "</ul>" : ""}
         </div>
     </div>
     <div id="popup-footer">

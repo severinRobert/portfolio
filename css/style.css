@@ -261,11 +261,6 @@ footer {
         margin: 2rem;
     }
 
-    footer {
-        position: fixed;
-        bottom: 0;
-    }
-
     ul {
         padding: 0 2rem;
         border-left: var(--secondaryColor) solid;
