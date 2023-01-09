@@ -5,7 +5,7 @@
     --secondaryColor: #009f83;
 }
 
-* {
+*:not(a) {
     margin: 0;
     padding: 0;
     color: var(--textPrimaryColor);
@@ -18,6 +18,10 @@ body {
     height: 100vh;
     font-family: system-ui, sans-serif;
     background-color: var(--primaryColor);
+}
+
+nav a {
+    text-decoration: none;
 }
 
 ul {
@@ -135,31 +139,31 @@ footer {
     /*
 	Label the portfolio data
 	*/
-    .portfolio-row td:nth-of-type(1):before {
+    .activity-row td:nth-of-type(1):before {
         content: "#";
     }
 
-    .portfolio-row td:nth-of-type(2):before {
+    .activity-row td:nth-of-type(2):before {
         content: "Title";
     }
 
-    .portfolio-row td:nth-of-type(3):before {
+    .activity-row td:nth-of-type(3):before {
         content: "Theme";
     }
 
-    .portfolio-row td:nth-of-type(4):before {
+    .activity-row td:nth-of-type(4):before {
         content: "Worked Hours";
     }
 
-    .portfolio-row td:nth-of-type(5):before {
+    .activity-row td:nth-of-type(5):before {
         content: "Validated Hours";
     }
 
-    .portfolio-row td:nth-of-type(6):before {
+    .activity-row td:nth-of-type(6):before {
         content: "Start";
     }
 
-    .portfolio-row td:nth-of-type(7):before {
+    .activity-row td:nth-of-type(7):before {
         content: "End";
     }
 
@@ -208,7 +212,7 @@ footer {
         position: relative;
     }
 
-    a {
+    nav a {
         font-size: 2rem;
     }
 
@@ -244,7 +248,7 @@ footer {
     }
 
     footer {
-        position: absolute;
+        position: fixed;
         bottom: 0;
     }
 
@@ -271,4 +275,14 @@ footer {
     tr:hover {
         background-color: var(--secondaryColor);
     }
+}
+
+.backdrop-blur {
+    filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.no-scroll {
+    overflow: hidden;
 }

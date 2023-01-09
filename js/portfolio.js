@@ -5,6 +5,32 @@ let sortPortfolio = (column, reverse=false) => {activities.sort((a, b) => (a[col
 let currentSort = "endDate";
 let reverse = false;
 
+function createPopup(activity, activityId) {
+    let hours = activity.workedHours;
+    return `
+    <button id="popup-close">X</button>
+    <div id="popup-body"> 
+        <h1>${activity.title}</h1>
+        <p>Theme: ${activity.theme}</p>
+        <p>Worked Hours: ${hours}</p>
+        <p>Validated Hours: ${hours > 9 ? 10 : hours}</p>
+        <p>From ${activity.startDate.toLocaleDateString("fr")} to ${activity.endDate.toLocaleDateString("fr")}</p>
+        <p>${activity.description}</p>
+        <div id="popup-images">
+            <div class="carousel">
+                ${activity.images.map(image => `<img src="assets/img/${image.src}" alt="${image.alt}"/>`).join('')}
+            </div>    
+        </div>
+        <div id="popup-links">
+            ${activity.links.map(link => `<a href="${link}" target="_blank">${link}</a>`).join('')}
+        </div>
+    </div>
+    <div id="popup-footer">
+        <button onclick="changePopup(${activityId==0 ? activities.length-1 : activityId-1})"><</button>
+        <span>${activityId+1}/${activities.length}</span>
+        <button onclick="changePopup(${activities.length==activityId+1 ? 0 : activityId+1})">></button>
+    </div>`
+}
 
 function buildPortfolio(sort="endDate") {
     reverse = (sort === currentSort) ? !reverse : false;
@@ -29,8 +55,8 @@ function buildPortfolio(sort="endDate") {
         let activity = activities[activityId];
         let hours = activity.workedHours;
         portfolioTable += `
-            <tr class="portfolio-row">
-                <td>${Number(activityId)+1}</td>
+            <tr class="activity-row">
+                <td class="activity-id">${Number(activityId)+1}</td>
                 <td>${activity.title}</td>
                 <td>${activity.theme}</td>
                 <td>${hours}</td>
@@ -70,4 +96,46 @@ function buildPortfolio(sort="endDate") {
     document.getElementById(sort).innerHTML += reverse ? "⬆" : "⬇";
     document.getElementById("validated-hours").innerHTML = total;
     document.getElementById("summary-table").innerHTML = summaryTable;
+
+    initPopup();
+}
+
+function changePopup(activityId) {
+    let popupContent = document.getElementById('popup-content');
+    popupContent.innerHTML = createPopup(activities[activityId], activityId);
+    popupContent.firstElementChild.addEventListener('click', () => {
+        body.classList.remove('no-scroll');
+        popup.style.display = 'none';
+    });
+}
+
+function initPopup() {
+    let rows = document.querySelectorAll('.activity-row');
+    let body = document.querySelector('body');
+    let popup = document.getElementById('popup');
+    let popupContent = document.getElementById('popup-content');
+    let popupOverlay = document.getElementById('popup-overlay');
+
+    rows.forEach((row) => {
+        row.addEventListener('click', (e) => {
+            let activityId = e.target.parentElement.children[0].innerHTML - 1;
+            let activity = activities[activityId];
+            popupContent.innerHTML = createPopup(activity, activityId);
+            popup.style.display = 'flex';
+            body.classList.add('no-scroll');
+            popupContent.firstElementChild.addEventListener('click', () => {
+                body.classList.remove('no-scroll');
+                popup.style.display = 'none';
+            });
+            popupContent.classList.add('zoomIn');
+        });
+    });    
+
+    // Add an event listener to close the popup when the user clicks outside of the popup content
+    window.addEventListener('click', (event) => {
+        if (event.target == popupOverlay) {
+            body.classList.remove('no-scroll');
+            popup.style.display = 'none';
+        }
+    });
 }

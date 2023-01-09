@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Séverin Robert - Portfolio</title>
@@ -7,15 +8,10 @@
     <script src="js/portfolio.js"></script>
     <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/popup.css">
 </head>
+
 <body onload="load()">
-    <!-- Buttons to test colors
-    <button onclick="changeBackground('#9CAF88')">#9CAF88</button>
-    <button onclick="changeBackground('#8ABD91')">#8ABD91</button>
-    <button onclick="changeBackground('#9AC791')">#9AC791</button>
-    <button onclick="changeBackground('#C0C791')">#C0C791</button>
-    <button onclick="changeBackground('#A9BD93')">#A9BD93</button>
-    -->
     <section id="body" class="row-reverse">
         <nav>
             <ul>
@@ -45,12 +41,20 @@
             </header>
             <section id="content">
                 <h2>Portfolio</h2>
-                <table id="portfolio-table" summary="This is a table of all activities of the portfolio with the name, theme, worked hours, validated hours and start and end date">
+                <table id="portfolio-table"
+                    summary="This is a table of all activities of the portfolio with the name, theme, worked hours, validated hours and start and end date">
                 </table>
                 <h2>Summary</h2>
                 <p>Total validated hours is <b id="validated-hours"></b> hours</p>
                 <table id="summary-table">
+                    <!-- content created on load of body -->
                 </table>
+                <div id="popup">
+                    <div id="popup-overlay" class="backdrop-blur"></div>
+                    <div id="popup-content">
+                        <!-- content created when activity clicked -->
+                    </div>
+                </div>
             </section>
         </section>
     </section>
@@ -65,4 +69,5 @@
         </section>
     </footer>
 </body>
+
 </html>

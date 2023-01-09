@@ -6,10 +6,15 @@ const activities = [
         "description": "Description 1",
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
-            }
+                "src": "Devday2020(1).PNG",
+                "alt": "Devday 2020 image",
+            },
+            {
+                "src": "Devday2020(2).PNG",
+                "alt": "Devday 2020 image",
+            },
         ],
+        "links": ["https://www.devday.be"],
         "workedHours": 11,
         "startDate": new Date("2020-11-16"),
         "endDate": new Date("2020-11-17"),
@@ -20,10 +25,11 @@ const activities = [
         "description": "Description",
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
+                "src": "BattleDev2020.PNG",
+                "alt": "BattleDev 2020 image",
             }
         ],
+        "links": ["https://www.linkedin.com/showcase/battledev"],
         "workedHours": 2,
         "startDate": new Date("2020-11-26"),
         "endDate": new Date("2020-11-26"),
@@ -34,10 +40,11 @@ const activities = [
         "description": "Description",
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
+                "src": "Cognizant.PNG",
+                "alt": "Conizant conference image",
             }
         ],
+        "links": [],
         "workedHours": 1,
         "startDate": new Date("2021-02-09"),
         "endDate": new Date("2021-02-09"),
@@ -48,10 +55,11 @@ const activities = [
         "description": "Description",
         "images": [
             {
-                "src": "./img/Efficy.PNG",
-                "alt": "alt",
+                "src": "Efficy.PNG",
+                "alt": "Efficy conference image",
             }
         ],
+        "links": [],
         "workedHours": 1,
         "startDate": new Date("2021-02-23"),
         "endDate": new Date("2021-02-23"),
@@ -62,10 +70,11 @@ const activities = [
         "description": "Description",
         "images": [
             {
-                "src": "img/Devday2021.PNG",
+                "src": "Devday2021.jpg",
                 "alt": "Devday 2021 image",
             }
         ],
+        "links": ["https://www.devday.be"],
         "workedHours": 6,
         "startDate": new Date("2021-11-23"),
         "endDate": new Date("2021-11-23"),
@@ -76,13 +85,14 @@ const activities = [
         "description": "Description",
         "images": [
             {
-                "src": "src",
+                "src": "teams-CTEPHEC.png",
                 "alt": "alt",
             }
         ],
+        "links": [],
         "workedHours": 12,
-        "startDate": new Date("2020-01-01"),
-        "endDate": new Date("2020-01-01"),
+        "startDate": new Date("2022-02-26"),
+        "endDate": new Date("2022-02-26"),
         "theme": "Capture The Flag",
     },
     {
@@ -90,10 +100,11 @@ const activities = [
         "description": "Description",
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
+                "src": "hackathoncslabs.jpg",
+                "alt": "Hackathon CSLabs image",
             }
         ],
+        "links": [],
         "workedHours": 44,
         "startDate": new Date("2022-02-18"),
         "endDate": new Date("2022-02-20"),
@@ -104,10 +115,11 @@ const activities = [
         "description": "Description",
         "images": [
             {
-                "src": "src",
+                "src": "teams-hackathonEPHEC.png",
                 "alt": "alt",
             }
         ],
+        "links": [],
         "workedHours": 44,
         "startDate": new Date("2021-10-29"),
         "endDate": new Date("2021-10-31"),
@@ -118,10 +130,11 @@ const activities = [
         "description": "Description",
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
+                "src": "scout.jpeg",
+                "alt": "Staff scout image",
             }
         ],
+        "links": ["https://lesscouts.be/fr"],
         "workedHours": Infinity,
         "startDate": new Date("2021-09-01"),
         "endDate": new Date("2022-09-01"),
@@ -132,10 +145,11 @@ const activities = [
         "description": "Description",
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
+                "src": "contrat_action.png",
+                "alt": "Contrat action image",
             }
         ],
+        "links": ["https://www.action.com/"],
         "workedHours": 14,
         "startDate": new Date("2020-09-25"),
         "endDate": new Date("2020-10-03"),
@@ -150,6 +164,7 @@ const activities = [
                 "alt": "alt",
             }
         ],
+        "links": [],
         "workedHours": 34,
         "startDate": new Date("2022-06-25"),
         "endDate": new Date(),
@@ -164,6 +179,7 @@ const activities = [
                 "alt": "alt",
             }
         ],
+        "links": [],
         "workedHours": 141,
         "startDate": new Date("2020-02-11"),
         "endDate": new Date(),
@@ -178,6 +194,7 @@ const activities = [
                 "alt": "alt",
             }
         ],
+        "links": [],
         "workedHours": 4,
         "startDate": new Date("2022-02-18"),
         "endDate": new Date("2022-02-18"),
@@ -192,6 +209,7 @@ const activities = [
                 "alt": "alt",
             }
         ],
+        "links": [],
         "workedHours": 8,
         "startDate": new Date("2020-08-25"),
         "endDate": new Date("2020-08-25"),
@@ -202,10 +220,19 @@ const activities = [
         "description": "https://github.com/severinRobert/clock_arduino",
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
-            }
+                "src": "clock1.jpg",
+                "alt": "Prototype image",
+            },
+            {
+                "src": "clock2.jpg",
+                "alt": "Clock image",
+            },
+            {
+                "src": "clock3.jpg",
+                "alt": "Clock image",
+            },
         ],
+        "links": [],
         "workedHours": 5,
         "startDate": new Date("2021-01-17"),
         "endDate": new Date("2021-01-18"),
@@ -220,6 +247,7 @@ const activities = [
                 "alt": "alt",
             }
         ],
+        "links": [],
         "workedHours": 50,
         "startDate": new Date("2022-04-12"),
         "endDate": new Date("2022-09-02"),
@@ -234,6 +262,7 @@ const activities = [
                 "alt": "alt",
             }
         ],
+        "links": [],
         "workedHours": 5,
         "startDate": new Date("2022-04-11"),
         "endDate": new Date("2022-04-11"),
