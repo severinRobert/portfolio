@@ -270,12 +270,16 @@ const activities = [
     {
         "title": "Home Server",
         "description": `Un projet qui m'a permis de mettre en pratique mes connaissances en réseau et en sécurité. J'ai codé ce projet avec Docker. J'ai mis en place un
-            serveur web avec Apache2, un serveur de base de données avec PostgreSQL, un serveur de stockage en local avec Samba et VPN avec OpenVPN.`,
+            serveur web avec Apache2, un serveur de base de données avec PostgreSQL, un serveur de stockage en local avec Samba et un VPN avec OpenVPN.`,
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
-            }
+                "src": "homeserver-raspberrypi.jpeg",
+                "alt": "Raspberrypi image",
+            },
+            {
+                "src": "homeserver-console.jpeg",
+                "alt": "homeserver console image",
+            },
         ],
         "links": ["https://github.com/severinRobert/home-server"],
         "workedHours": 50,

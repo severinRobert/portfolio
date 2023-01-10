@@ -4,6 +4,7 @@ let sortPortfolio = (column, reverse=false) => {activities.sort((a, b) => (a[col
 
 let currentSort = "endDate";
 let reverse = false;
+let currentActivityId = 0;
 
 function createPopup(activity, activityId) {
     let hours = activity.workedHours;
@@ -28,9 +29,9 @@ function createPopup(activity, activityId) {
         </div>
     </div>
     <div id="popup-footer">
-        <button onclick="changePopup(${activityId==0 ? activities.length-1 : activityId-1})"><</button>
+        <button onclick="changePopup('previous')"><</button>
         <span>${activityId+1}/${activities.length}</span>
-        <button onclick="changePopup(${activities.length==activityId+1 ? 0 : activityId+1})">></button>
+        <button onclick="changePopup('next')">></button>
     </div>`
 }
 
@@ -57,7 +58,7 @@ function buildPortfolio(sort="endDate") {
         let activity = activities[activityId];
         let hours = activity.workedHours;
         portfolioTable += `
-            <tr class="activity-row">
+            <tr class="activity-row" tabindex="0" role="button" aria-pressed="true">
                 <td class="activity-id">${Number(activityId)+1}</td>
                 <td>${activity.title}</td>
                 <td>${activity.theme}</td>
@@ -102,13 +103,31 @@ function buildPortfolio(sort="endDate") {
     initPopup();
 }
 
-function changePopup(activityId) {
-    let popupContent = document.getElementById('popup-content');
-    popupContent.innerHTML = createPopup(activities[activityId], activityId);
-    popupContent.firstElementChild.addEventListener('click', () => {
-        body.classList.remove('no-scroll');
+function removePopup(body, popup, popupContent) {
+    body.classList.remove('no-scroll');
+    popupContent.classList.remove('animate__zoomIn', 'animate__slideInLeft', 'animate__slideInRight', 'animate__slideOutLeft', 'animate__slideOutRight');
+    popupContent.classList.add('animate__zoomOut');
+    setTimeout(() => {
         popup.style.display = 'none';
-    });
+    }, 200);
+}
+
+function changePopup(direction) {
+    let activityId = direction=="previous" ? currentActivityId-1 : currentActivityId+1;
+    activityId = activityId < 0 ? activities.length-1 : activityId;
+    activityId = activityId >= activities.length ? 0 : activityId;
+    let popupContent = document.getElementById('popup-content');
+    popupContent.classList.remove('animate__zoomIn', 'animate__slideInLeft', 'animate__slideInRight');
+    popupContent.classList.add(direction == "previous" ? 'animate__slideOutRight' : 'animate__slideOutLeft');
+    setTimeout(() => {
+        popupContent.innerHTML = createPopup(activities[activityId], activityId);
+        popupContent.classList.remove('animate__slideOutRight', 'animate__slideOutLeft');
+        popupContent.classList.add(direction == "previous" ? 'animate__slideInLeft' : 'animate__slideInRight');
+        popupContent.firstElementChild.addEventListener('click', () => {
+            removePopup(body, popup, popupContent);
+        });
+    }, 150);
+    currentActivityId = activityId;
 }
 
 function initPopup() {
@@ -118,26 +137,39 @@ function initPopup() {
     let popupContent = document.getElementById('popup-content');
     let popupOverlay = document.getElementById('popup-overlay');
 
+    document.addEventListener('keydown', function(event) {
+        if (event.repeat) { return }
+        if(event.key == "ArrowLeft") {
+            changePopup('previous');
+        }
+        else if(event.key == "ArrowRight") {
+            changePopup('next');
+        }
+        else if(event.key == "Escape") {
+            removePopup(body, popup, popupContent);
+        }
+    });
+
     rows.forEach((row) => {
         row.addEventListener('click', (e) => {
+            popupContent.classList.remove('animate__zoomOut');
             let activityId = e.target.parentElement.children[0].innerHTML - 1;
             let activity = activities[activityId];
+            currentActivityId = activityId;
             popupContent.innerHTML = createPopup(activity, activityId);
             popup.style.display = 'flex';
             body.classList.add('no-scroll');
             popupContent.firstElementChild.addEventListener('click', () => {
-                body.classList.remove('no-scroll');
-                popup.style.display = 'none';
+                removePopup(body, popup, popupContent);
             });
-            popupContent.classList.add('zoomIn');
+            popupContent.classList.add('animate__zoomIn');
         });
     });    
 
     // Add an event listener to close the popup when the user clicks outside of the popup content
     window.addEventListener('click', (event) => {
         if (event.target == popupOverlay) {
-            body.classList.remove('no-scroll');
-            popup.style.display = 'none';
+            removePopup(body, popup, popupContent);
         }
     });
 }
