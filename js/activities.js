@@ -170,7 +170,7 @@ const activities = [
             de développer mes compétences en communication en étant en caisse avec les clients.`,
         "images": [
             {
-                "src": "contrat_action.png",
+                "src": "",
                 "alt": "Contrat action image",
             }
         ],
@@ -204,8 +204,8 @@ const activities = [
             (le visual basic de LibreOffice et OpenOffice). J'ai aussi appris à m'adapter à la manière dont le site était codé.`,
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
+                "src": "lescigognes_attestation.png",
+                "alt": "Attestation Lescigognes image",
             }
         ],
         "links": ["https://www.lescigognes.be/"],
