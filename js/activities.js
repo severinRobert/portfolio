@@ -95,9 +95,13 @@ const activities = [
             de la cybersécurité même si j'avais déjà été sur des sites comme <a href="https://www.root-me.org/">Root-me</a> ou <a href="https://tryhackme.com/">TryHackMe</a>.`,
         "images": [
             {
+                "src": "CTEphec.png",
+                "alt": "CTEphec poster",
+            },
+            {
                 "src": "teams-CTEPHEC.png",
-                "alt": "alt",
-            }
+                "alt": "Teams CTEphec image",
+            },
         ],
         "links": [],
         "workedHours": 12,
@@ -112,9 +116,13 @@ const activities = [
             appels vidéo en rapport avec l'apprentissage permettant aux personnes agées de transmettre leurs savoir.`,
         "images": [
             {
+                "src": "certificat_cslabs.png",
+                "alt": "Hackathon CSLabs certificate image",
+            },
+            {
                 "src": "hackathoncslabs.jpg",
                 "alt": "Hackathon CSLabs image",
-            }
+            },
         ],
         "links": ["https://www.cslabs.be/"],
         "workedHours": 44,
@@ -212,8 +220,8 @@ const activities = [
             J'ai pu apprendre à communiquer avec les étudiants et à mettre en valeur ce qu'apporte l'EPHEC dans son cursus par rapport à un autre.`,
         "images": [
             {
-                "src": "src",
-                "alt": "alt",
+                "src": "mail_SIEP.png",
+                "alt": "mail SIEP image",
             }
         ],
         "links": [],
@@ -256,10 +264,10 @@ const activities = [
                 "src": "clock2.jpg",
                 "alt": "Clock image",
             },
-            {
-                "src": "clock3.jpg",
-                "alt": "Clock image",
-            },
+            // {
+            //     "src": "clock3.jpg",
+            //     "alt": "Clock image",
+            // },
         ],
         "links": ["https://github.com/severinRobert/clock_arduino"],
         "workedHours": 5,

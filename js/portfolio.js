@@ -18,9 +18,7 @@ function createPopup(activity, activityId) {
         Du ${activity.startDate.toLocaleDateString("fr")} au ${activity.endDate.toLocaleDateString("fr")}</p>
         <p>${activity.description}</p>
         <div id="popup-images">
-            <div class="carousel">
-                ${activity.images.map(image => `<img src="assets/img/${image.src}" alt="${image.alt}"/>`).join('')}
-            </div>    
+            ${activity.images.map(image => `<img src="assets/img/${image.src}" alt="${image.alt}"/>`).join('')}
         </div>
         <div id="popup-links">
             ${activity.links.length > 0 ? "<p>Liens:</p><ul>" : ""}

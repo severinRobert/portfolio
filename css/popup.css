@@ -38,15 +38,23 @@
   margin-top: 0;
 }
 
-#popup-content img {
-  width: 100%;
-}
-
 #popup-body {
   display: flex;
   flex-direction: column;
   height: 95%;
   overflow: scroll;
+}
+
+#popup-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#popup-images img {
+  width: 48%;
+  height: fit-content;
 }
 
 #popup-footer {
